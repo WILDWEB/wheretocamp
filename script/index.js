@@ -5,7 +5,7 @@ var map;
 var autocomplete;
 var infowindow;
 var places;
-var markers = [];
+var markers = [];      //http://maps.google.com/mapfiles/ms/icons/campground.png
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
@@ -18,8 +18,7 @@ function initMap() {
     });
 
   // get places auto-complete when user type in location-text-box
-  var input = // @type {HTMLInputElement}
-    ( document.getElementById('location-text-box'));
+  var input = ( document.getElementById('location-text-box'));
 
   autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
@@ -107,7 +106,7 @@ function searchForCampsites() {
                 animation: google.maps.Animation.DROP,
                 icon: markerIcon
               });
-              // If the user clicks a hotel marker, show the details of that hotel
+              // If the user clicks a campsite marker, show the details of that campsite
               // in an info window.
               markers[i].placeResult = results[i];
               google.maps.event.addListener(markers[i], 'click', showInfoWindow);
@@ -228,41 +227,10 @@ function buildIWContent(place) {
 	 var placeLocation = place.geometry.location;
 	 
 	document.getElementById('streetview-toggle').addEventListener('click', function(){
-	   /*
-	    var panviewRequest = {
-	      location: placeLocation,
-	      preference:google.maps.StreetViewPreference.BEST,
-	      source: google.maps.StreetViewSource.OUTDOOR
-	    };
-	    
-	    streetView.getPanorama(panviewRequest, function(panData, status){
-	      if (status=== google.maps.StreetViewStatus.OK){
-	        streetViewMap.setPosition(panData.location.latLng);
-	        streetViewMap.setVisible(true);
-	      }
-	      else {
-	        streetViewMap.setPosition(placeLocation);
-	        streetViewMap.setVisible(true);
-	      }
-	      */
 	    streetViewMap.setPosition(placeLocation);
 	    streetViewMap.setVisible(true);
 	 });
 	    
-	 // don't think we need this
-	 window.place=place;
-	    
-	 var streetMarker = new google.maps.Marker({
-	   position: placeLocation,
-	   map: map,
-	   title: "Place"
-	 });
-	    
-	 streetMarker.addListener("click", function(ev){
-	   console.log("street view switch", ev);
-	   streetViewMap.setPosition(ev.latLng);
-	   streetViewMap.setVisible(true);
-	 });
 	
 }
 

@@ -1,18 +1,19 @@
+Where2camp.com
+=====
+## Interactive Front-end Project
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+This Page was built to help people find places to camp all over europe.  It uses the search function to select the country or area location and then you use the submit button which drops the markers at the designated camping spots within a 10000 meter radius of the location center point.  
+Once you click on a particular marker an info box pops up with the campsite information with a streetview button so you can go straight to the campsite and see what its like in street view.
+
+## Languages Used:
+
+HTML, CSS, Javascript.
+
+## Other componants:
+
+Google maps api
+Google places api
 
 
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
+Built by WildWeb Developments
+Author Jon Simmons
